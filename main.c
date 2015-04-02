@@ -15,18 +15,6 @@ int main()
 	int **MagicSquare = InitializeMagicSquare(MagicSquareSize);
 	int NumberSum = CalculateNumberSum(MagicSquareSize);
 
-    MagicSquare[0][0] = 4;
-    MagicSquare[0][1] = 9;
-    MagicSquare[0][2] = 2;
-
-    MagicSquare[1][0] = 3;
-    MagicSquare[1][1] = 5;
-    MagicSquare[1][2] = 7;
-
-    MagicSquare[2][0] = 8;
-    MagicSquare[2][1] = 1;
-    MagicSquare[2][2] = 6;
-
     DrawMagicSquare(MagicSquare, MagicSquareSize);
     CheckMagicSquare(MagicSquare, MagicSquareSize, NumberSum);
 
@@ -51,26 +39,26 @@ void CheckMagicSquare(int **magicSquare, int magicSquareSize, int numberSum) {
 		for (j = 0; j < magicSquareSize; j++) {
 			// Check hor
 			if (((Horizontal += magicSquare[i][j]) != numberSum) && j == magicSquareSize-1) {
-				printf("No magic happening...H");
+				printf("No magic happening...");
 				return;
 			}
 
 			// Check vert
 			if (((Vertical += magicSquare[j][i]) != numberSum) && j == magicSquareSize-1) {
-				printf("No magic happening...V");
+				printf("No magic happening...");
 				return;
 			}
 
 			if (k < magicSquareSize) {
                 // Check diag
 				if (((Diagonal += magicSquare[k][j]) != numberSum) && j == magicSquareSize-1) {
-					printf("No magic happening...D");
+					printf("No magic happening...");
 					return;
                 }
 
                 // Check condiag
                 if (((ConDiagonal += magicSquare[magicSquareSize-1-k][magicSquareSize-1-j]) != numberSum) && j == magicSquareSize-1) {
-					printf("No magic happening...CD");
+					printf("No magic happening...");
 					return;
 				}
 				k++;
