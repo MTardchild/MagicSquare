@@ -18,9 +18,7 @@ int main()
     DrawMagicSquare(MagicSquare, MagicSquareSize);
     CheckMagicSquare(MagicSquare, MagicSquareSize, NumberSum);
 
-    scanf("%d", MagicSquareSizePointer);
-
-	return 0;
+    return 0;
 }
 
 void CheckMagicSquare(int **magicSquare, int magicSquareSize, int numberSum) {
